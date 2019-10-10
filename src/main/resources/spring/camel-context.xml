@@ -8,13 +8,30 @@
 
   <!-- Define a traditional camel context here -->
   <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
-    <route id="simple-route">
-      <from id="route-timer" uri="timer:foo?period=2000"/>
-      <transform id="route-transform">
-        <method ref="myTransformer"/>
-      </transform>
-      <log id="route-log" message=">>> ${body}"/>
-    </route>
+<restConfiguration bindingMode="auto" component="restlet" port="8090"/>
+    <rest path="/say">
+    <get uri="/hello">
+      <to uri="direct:hello"/>
+    </get>
+    <get uri="/bye" consumes="application/json">
+      <to uri="direct:bye"/>
+    </get>
+    <post uri="/bye">
+      <to uri="mock:update"/>
+    </post>
+  </rest>
+  <route>
+    <from uri="direct:hello"/>
+    <transform>
+      <constant>Hello World</constant>
+    </transform>
+  </route>
+  <route>
+    <from uri="direct:bye"/>
+    <transform>
+      <constant>Bye World</constant>
+    </transform>
+  </route>
   </camelContext>
 
 </beans>
