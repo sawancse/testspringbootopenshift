@@ -49,11 +49,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-		 <dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-restlet</artifactId>
-    		<version>2.21.2</version>
-		</dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -80,7 +75,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-restlet</artifactId>
+    		<version>2.21.2</version>
+		</dependency>
         <!-- Test -->
         <dependency>
             <groupId>junit</groupId>
