@@ -29,7 +29,7 @@ public class Application {
      * A main method to start this application.
      */
     public static void main(String[] args) {
-    	System.out.println("calling main method from test program 2..");
+    	System.out.println("calling main method from test program 3..");
         SpringApplication.run(Application.class, args);
     }
 
