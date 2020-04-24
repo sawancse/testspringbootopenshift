@@ -18,7 +18,7 @@ package io.fabric8.quickstarts.camel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.+0+6annotation.ImportResource;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 // load regular Spring XML file from the classpath that contains the Camel XML DSL
@@ -29,7 +29,7 @@ public class Application {
      * A main method to start this application.
      */
     public static void main(String[] args) {
-    	System.out.println("calling main method from test program 8..");
+    	System.out.println("calling main method from test program 10..");
         SpringApplication.run(Application.class, args);
     }
 
